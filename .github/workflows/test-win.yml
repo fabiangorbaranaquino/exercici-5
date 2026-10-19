@@ -1,0 +1,21 @@
+name: Primer workflow
+  on: [push]
+jobs:
+saludar:
+runs-on: ubuntu-latest
+steps:
+- name: Bajar mi código
+uses: actions/checkout@v4
+- name: Decir hola
+run: echo "Hola desde GitHub"
+- name: Información
+run: |
+date
+python3 --version
+uname -a
+- name: Crear temp
+run: mkdir temp && touch temp/a.txt
+- name: Listar temp
+run: ls
+working-directory: ./temp
+EOF
